@@ -1,5 +1,5 @@
 {
-  "name": "mocha-typescript-seed",
+  "name": "json-convert",
   "version": "1.0.0",
   "description": "A project with mocha-typescript enabled",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pana-cc/mocha-typescript-seed.git"
+    "url": "git+git@github.com:yunkeCN/json-convert.git"
   },
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/pana-cc/mocha-typescript-seed/issues"
+    "url": "https://github.com/yunkeCN/json-convert/issues"
   },
-  "homepage": "https://github.com/pana-cc/mocha-typescript-seed#readme",
+  "homepage": "https://github.com/yunkeCN/json-convert/blob/HEAD/README.md",
   "devDependencies": {
     "@types/chai": "*",
     "@types/mocha": "*",
