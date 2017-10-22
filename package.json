@@ -22,7 +22,9 @@
   "devDependencies": {
     "@types/chai": "*",
     "@types/mocha": "*",
+    "@types/node": "^8.0.46",
     "chai": "*",
+    "es6-shim": "^0.35.3",
     "mocha": "*",
     "mocha-typescript": "*",
     "nyc": "*",
