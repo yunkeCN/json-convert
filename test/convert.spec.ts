@@ -37,7 +37,8 @@ suite("转换对象", () => {
             other: {
                 time: now,
                 x: "q"
-            }
+            },
+            name: "xj"
         }
         const schemeData = convert(scheme, data)
         expect(schemeData).to.deep.equal({
@@ -48,4 +49,57 @@ suite("转换对象", () => {
             }
         })
     });
+    test("支持默认parser", () => {
+        const scheme = {
+            retCode: Number,
+            isPass: Boolean,
+        }
+        const data = {
+            retCode: "0",
+            isPass: "false",
+            name: "xj"
+        }
+        const schemeData = convert(scheme, data, { defaultParser: true })
+        expect(schemeData).to.deep.equal({
+            retCode: 0,
+            isPass: true,
+            name: "xj"
+        })
+    });
 });
+
+suite("转换数组", () => {
+    test("转换简单的一层数组", () => {
+        const scheme = [Number]
+        const data = ["1", 2, true]
+        const schemeData = convert(scheme, data)
+        expect(schemeData).to.deep.equal([1, 2, 1])
+    });
+});
+
+suite("对象与数组嵌套", () => {
+    test("应该转换的数组", () => {
+        const scheme = {
+            array: [Number]
+        }
+        const data = {
+            array: ["1", 2, true]
+        }
+        const schemeData = convert(scheme, data)
+        expect(schemeData).to.deep.equal({
+            array: [1, 2, 1]
+        })
+    });
+    test("不应该转换的数组", () => {
+        const scheme = {
+            array: d => d
+        }
+        const data = {
+            array: ["1", 2, true]
+        }
+        const schemeData = convert(scheme, data)
+        expect(schemeData).to.deep.equal({
+            array: ["1", 2, true]
+        })
+    })
+})
