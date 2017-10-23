@@ -12,14 +12,16 @@
 //     }
 //     return undefined;
 // }
-export function convert(scheme: Object, data: any) {
+export function convert(scheme: object, data: any) {
     const ret = {}
     for (const key in scheme) {
         if (data.hasOwnProperty(key)) {
             const d = data[key]
             const parse = scheme[key]
-            if (parse) {
+            if (typeof parse === "function") {
                 ret[key] = parse(d)
+            } else if (typeof parse === "object") {
+                ret[key] = convert(parse, d)
             }
         }
     }
