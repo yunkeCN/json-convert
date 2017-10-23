@@ -1,3 +1,22 @@
 language: node_js
 node_js:
-  - "node"
+- node
+cache:
+  directories:
+  - node_modules
+script: 
+  - npm test
+  - npm run build
+after_script:
+  - npm run coverage
+deploy:
+  provider: npm
+  email: 285516193@qq.com
+  api_key:
+    secure: ZVd0ZD7YGN2WsXClozfVputDKPppRkj9w7QJ8M/FRRDRlyHbqgAIJv1lDs+GAnDftMLclqPwSooZRqoJlD9v7E7xDme9ZMCSiOUfuojS/BIkvq4H41P17OJYTrH+NHGAKNt8Q/vOcIcRF8ZsiAoE9zRMOKCHQWckFXbVKfJZGChRKai+Trzs1o7DR7pOmeLb2yBIDe1eRf2VDhz73VkbFwP2rL0ijUDqXHbtwkx4qHxL/LkUFhKK4YU6I/grXRF9vPp0eYgIOnH2otESeaDnDTgoGiO+/LuhWXKEM50+UCganfAmzjCdBc073au70LX2nk9K5Ac131VQ7bD0yiYfBJu3kYWWmMIFB7UiFtIDcgnCCSu+vtbJocA+F0HW23y1FjNUH+Y8pUYB2eJqPssbeDlYWpAd++otOE/jHv1mOBoU8pLCBAsAjniHuu5S5PSkXeIG1N72PLduv4A1S+e6BnZh8Cj8ftLju/j89gpaO/uVVV1JLaY7eBEM6h2K/t3FXXusGlZ0a7cfrl4BxF1kKaH/SkNJOo1jDt4+GbDPJmxfC1E4gnevyxOKzMe4jHsCw+s+zqcg+DHnrXXwngWw4CUu6+SNna5PalmrBZxxK458R7TCDzN8x7Vo/TROUnVS2lZHTaFigtXbTgU/ziOpHfa4j22S0NSUuu5DhGpSASc=
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: yunkeCN/json-convert
+git:
+  depth: 3
