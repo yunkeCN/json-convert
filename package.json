@@ -7,7 +7,7 @@
     "pretest": "tsc",
     "test": "nyc mocha",
     "watch": "mocha-typescript-watch",
-    "prepare": "tsc"
+    "build": "tsc src/*.ts --sourceMap --outDir ."
   },
   "repository": {
     "type": "git",
