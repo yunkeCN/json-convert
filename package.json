@@ -7,6 +7,7 @@
     "pretest": "tsc",
     "test": "nyc mocha",
     "watch": "mocha-typescript-watch",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "build": "tsc src/*.ts --sourceMap --outDir ."
   },
   "repository": {
@@ -30,7 +31,8 @@
     "nyc": "*",
     "source-map-support": "*",
     "ts-node": "^3.3.0",
-    "typescript": "*"
+    "typescript": "*",
+    "coveralls": "^2.13.1"
   },
   "nyc": {
     "check-coverage": true,
