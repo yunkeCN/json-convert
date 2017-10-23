@@ -1,18 +1,25 @@
-import { convert, Ischeme } from "../src/convert"
-const Id = d => d
-const scheme: Ischeme = {
-    retCode: Number,
-    isPass: Boolean,
-    "*": Id
-}
+import { convert } from "../src/convert"
+import { suite, test } from "mocha-typescript"
+import { expect } from "chai";
 
-const data = {
-    retCode: "0",
-    isPass: "false",
-    other: {
-        time: Date.now()
-    }
-}
-const schemeData = convert(scheme, data)
-console.log(schemeData)
-console.log(scheme)
+suite("parse object", () => {
+    test("parse simple object", () => {
+        const Id = d => d
+        const scheme = {
+            retCode: Number,
+            isPass: Boolean
+        }
+        const data = {
+            retCode: "0",
+            isPass: "false",
+            other: {
+                time: Date.now()
+            }
+        }
+        const schemeData = convert(scheme, data)
+        expect(schemeData).to.deep.equal({
+            retCode: 0,
+            isPass: true
+        })
+    });
+});
