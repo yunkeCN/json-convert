@@ -107,21 +107,21 @@ suite("对象与数组嵌套", () => {
 
 
 suite("移动销售项目中的真实使用情况", () => {
-    test("原数据不包含某些项的时候也能正常处理", () => {
+    test("转换不存在的键", () => {
         function Item(item) {   
             console.log(item)
             return item
         }
         const scheme = {
-            order: {
-                housing: {
-                    // amount: Number,
-                    // area: Number,
-                    // count: Number
-                }
+            a: {
+                b: String
             },
         }
-        const schemeData = convert(scheme, mock1, { defaultParser: true })
-        expect(schemeData).to.deep.equal(mock1)
+        const schemeData = convert(scheme, {})
+        expect(schemeData).to.deep.equal({
+            a: {
+                b: ""
+            }
+        })
     });
 })
