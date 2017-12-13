@@ -1,6 +1,6 @@
 {
   "name": "json-convert",
-  "version": "1.0.0",
+  "version": "1.1.5",
   "description": "A project with mocha-typescript enabled",
   "main": "index.js",
   "scripts": {
