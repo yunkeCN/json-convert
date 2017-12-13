@@ -4,16 +4,16 @@ node_js:
 cache:
   directories:
   - node_modules
-script: 
-  - npm test
-  - npm run build
+script:
+- npm test
+- npm run build
 after_script:
-  - npm run coverage
+- npm run coverage
 deploy:
   provider: npm
   email: 285516193@qq.com
   api_key:
-    secure: ZVd0ZD7YGN2WsXClozfVputDKPppRkj9w7QJ8M/FRRDRlyHbqgAIJv1lDs+GAnDftMLclqPwSooZRqoJlD9v7E7xDme9ZMCSiOUfuojS/BIkvq4H41P17OJYTrH+NHGAKNt8Q/vOcIcRF8ZsiAoE9zRMOKCHQWckFXbVKfJZGChRKai+Trzs1o7DR7pOmeLb2yBIDe1eRf2VDhz73VkbFwP2rL0ijUDqXHbtwkx4qHxL/LkUFhKK4YU6I/grXRF9vPp0eYgIOnH2otESeaDnDTgoGiO+/LuhWXKEM50+UCganfAmzjCdBc073au70LX2nk9K5Ac131VQ7bD0yiYfBJu3kYWWmMIFB7UiFtIDcgnCCSu+vtbJocA+F0HW23y1FjNUH+Y8pUYB2eJqPssbeDlYWpAd++otOE/jHv1mOBoU8pLCBAsAjniHuu5S5PSkXeIG1N72PLduv4A1S+e6BnZh8Cj8ftLju/j89gpaO/uVVV1JLaY7eBEM6h2K/t3FXXusGlZ0a7cfrl4BxF1kKaH/SkNJOo1jDt4+GbDPJmxfC1E4gnevyxOKzMe4jHsCw+s+zqcg+DHnrXXwngWw4CUu6+SNna5PalmrBZxxK458R7TCDzN8x7Vo/TROUnVS2lZHTaFigtXbTgU/ziOpHfa4j22S0NSUuu5DhGpSASc=
+    secure: pzLkDm4Zgw92ZotPMqakv2JoX1iv7IpH7b78huz2cy51Uuin/fTuPxcnfv1aB37YFRhWjhQbAdvrQJBANy0QtNRvVJi0HWL++fjHu6CoB2C6WF5Y50M26Ge7F5DeqakKN9jArjQS0NllKpDWG7vfdUIBsl5f6SsIHmnRtCXPLak1jr4mzTaT7u7E4jk73RiBJXhintjQpc6LxoB2ZRay9EbcEM5RCsuVIIZfNN9YqQynunaKlpUnLOSmZJilanLL4vrV1kVgGg5bNROVvEhaRjIAyXh+lAOJeOBo7BGbdhkS60noVupOU4XxFUsDQxdD2etdQOdL7vOOqS/PYuoan1q0gx7zfc6e/kIj+jBwhPMTVTBA2jRJIrh6o+5r5/0q2uDRMHwXaVQQqTvHhK0mIZCL521+MsKc9npalcTjDaeXD+If6W1xjTzgLGF+0+XoEw/jcGTduFVNsTV6UiC982S6H5gsL9yfpunuBLrLFrwmnYPeLQMGNaZuQlTsZgc/P98TGSZCbrzETV8J594D/q1o/0iDMlvbmtLWII81sYb6RpYkLN23smRFri2+ymEOaGh2m/A0hXBXFDtturZK6Owl5aR8RFv0AGw7WGHOZJHNeIdA1lO5MHheLcMasJHTrlakSgPI5l+m44ycV/8Pb1si2ZbotSRbGqblBrFfHj0=
   skip_cleanup: true
   on:
     tags: true
