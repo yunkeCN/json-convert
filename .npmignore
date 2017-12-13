@@ -3,4 +3,4 @@ test
 .idea
 .vscode
 .nyc_output
-.coverage
+coverage
