@@ -17,6 +17,6 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-    repo: yunkeCN/json-convert
+    repo: json-convert
 git:
   depth: 3
