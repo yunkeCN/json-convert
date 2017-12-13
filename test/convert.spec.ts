@@ -123,7 +123,7 @@ suite("移动销售项目中的真实使用情况", () => {
         expect(schemeData).to.deep.equal({
             a: {
                 b: {
-                    c: ""
+                    c: "undefined"
                 }
             }
         })
