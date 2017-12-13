@@ -7,10 +7,9 @@ function convertObject(scheme, data: any, opts: Iopts) {
     const all = {...scheme,...data}
     for (const key in all) {
         if (all.hasOwnProperty(key)) {
-            
             const parse = scheme[key]
             if (typeof parse === "function") {
-                ret[key] = data ? parse(data[key]) : parse()
+                ret[key] = parse(data && data[key])
             } else if (typeof parse === "object") {
                 ret[key] = convert(parse, data && data[key], opts)
             } else if (defaultParser) {
