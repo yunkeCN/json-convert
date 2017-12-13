@@ -1,6 +1,7 @@
 import { convert } from "../src/convert"
 import { suite, test } from "mocha-typescript"
 import { expect } from "chai";
+import { mock1 } from "./mock"
 
 suite("转换对象", () => {
     test("转换简单的一层对象", () => {
@@ -102,4 +103,29 @@ suite("对象与数组嵌套", () => {
             array: ["1", 2, true]
         })
     })
+})
+
+
+suite("移动销售项目中的真实使用情况", () => {
+    test("转换不存在的键", () => {
+        function Item(item) {   
+            console.log(item)
+            return item
+        }
+        const scheme = {
+            a: {
+                b: {
+                    c: String
+                }
+            },
+        }
+        const schemeData = convert(scheme, {})
+        expect(schemeData).to.deep.equal({
+            a: {
+                b: {
+                    c: ""
+                }
+            }
+        })
+    });
 })

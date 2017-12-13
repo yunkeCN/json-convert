@@ -4,15 +4,17 @@ interface Iopts {
 function convertObject(scheme, data: any, opts: Iopts) {
     const { defaultParser } = opts
     const ret = {}
-    for (const key in data) {
-        if (data.hasOwnProperty(key)) {
-            const d = data[key]
+    const all = {...scheme,...data}
+    for (const key in all) {
+        if (all.hasOwnProperty(key)) {
+            
             const parse = scheme[key]
             if (typeof parse === "function") {
-                ret[key] = parse(d)
+                ret[key] = data ? parse(data[key]) : parse()
             } else if (typeof parse === "object") {
-                ret[key] = convert(parse, d, opts)
+                ret[key] = convert(parse, data && data[key], opts)
             } else if (defaultParser) {
+                const d = data && data[key]
                 ret[key] = typeof defaultParser === "function" ? defaultParser(d) : d
             }
         }
