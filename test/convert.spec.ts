@@ -114,13 +114,17 @@ suite("移动销售项目中的真实使用情况", () => {
         }
         const scheme = {
             a: {
-                b: String
+                b: {
+                    c: String
+                }
             },
         }
         const schemeData = convert(scheme, {})
         expect(schemeData).to.deep.equal({
             a: {
-                b: ""
+                b: {
+                    c: ""
+                }
             }
         })
     });
