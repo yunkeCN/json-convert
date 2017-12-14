@@ -7,14 +7,14 @@
 ```json
 {
     "x": {
-        name: "X man",
-        money: 1000,
-        count: 2
+        "name": "X man",
+        "money": 1000,
+        "count": 2
     },
     "y": {
-        name: "S man",
-        money: 25.78,
-        count: 3
+        "name": "S man",
+        "money": 25.78,
+        "count": 3
     }
 }
 ```
