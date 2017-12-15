@@ -6,16 +6,14 @@ function convertObject(scheme, data: any, opts: Iopts) {
     const ret = {}
     const all = {...scheme,...data}
     for (const key in all) {
-        if (all.hasOwnProperty(key)) {
-            const parse = scheme[key]
-            if (typeof parse === "function") {
-                ret[key] = parse(data && data[key])
-            } else if (typeof parse === "object") {
-                ret[key] = convert(parse, data && data[key], opts)
-            } else if (defaultParser) {
-                const d = data && data[key]
-                ret[key] = typeof defaultParser === "function" ? defaultParser(d) : d
-            }
+        const parse = scheme[key]
+        if (typeof parse === "function") {
+            ret[key] = parse(data && data[key])
+        } else if (typeof parse === "object") {
+            ret[key] = convert(parse, data && data[key], opts)
+        } else if (defaultParser) {
+            const d = data && data[key]
+            ret[key] = typeof defaultParser === "function" ? defaultParser(d) : d
         }
     }
     return ret
@@ -26,6 +24,8 @@ function convertArray(scheme, data: any, opts: Iopts) {
     for (const d of data) {
         if (parser) {
             ret.push(parser(d))
+        } else {
+            ret.push(d)
         }
     }
     return ret

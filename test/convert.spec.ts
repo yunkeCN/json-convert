@@ -60,11 +60,19 @@ suite("转换对象", () => {
             isPass: "false",
             name: "xj"
         }
-        const schemeData = convert(scheme, data, { defaultParser: true })
-        expect(schemeData).to.deep.equal({
+        expect(
+            convert(scheme, data, { defaultParser: true })
+        ).to.deep.equal({
             retCode: 0,
             isPass: true,
             name: "xj"
+        })
+        expect(
+            convert(scheme, data, { defaultParser: () => null })
+        ).to.deep.equal({
+            retCode: 0,
+            isPass: true,
+            name: null
         })
     });
 });
@@ -76,6 +84,12 @@ suite("转换数组", () => {
         const schemeData = convert(scheme, data)
         expect(schemeData).to.deep.equal([1, 2, 1])
     });
+    test("未设定格式", () => {
+        const scheme = []
+        const data = ["1", 2, true]
+        const schemeData = convert(scheme, data)
+        expect(schemeData).to.deep.equal(data)
+    })
 });
 
 suite("对象与数组嵌套", () => {
