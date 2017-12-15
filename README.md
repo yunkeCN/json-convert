@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/yunkeCN/json-convert.svg?branch=master)](https://travis-ci.org/yunkeCN/utils)
 [![Coverage Status](https://coveralls.io/repos/github/yunkeCN/json-convert/badge.svg?branch=master)](https://coveralls.io/github/yunkeCN/json-convert?branch=master)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Dependency Status](https://beta.gemnasium.com/badges/github.com/yunkeCN/json-convert.svg)](https://beta.gemnasium.com/projects/github.com/yunkeCN/json-convert)
 # scheme parse
 结构化的数据
 
