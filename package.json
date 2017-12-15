@@ -44,12 +44,14 @@
       "src/**/*.js"
     ],
     "exclude": [
-      "test/**/*.js"
+      "test/**/*.js",
+      "src/index.js"
     ],
     "reporter": [
       "lcov",
       "text-summary"
     ],
-    "all": true
+    "all": true,
+    "report-dir": "./alternative"
   }
 }
